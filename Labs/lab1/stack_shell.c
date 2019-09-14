@@ -31,7 +31,8 @@ void main(int argc, char **argv)
 	   contents here. To set an address at location X
 	   with respect to the buffer, use the following format: 
 	   *(long *) &buffer[X] = addr; */
-	for(int i = 0; i < sizeof(shellcode); i++){
+	int i;
+	for(i = 0; i < sizeof(shellcode); i++){
 		*(long*) &buffer[i] = shellcode[i];
 	}
 
