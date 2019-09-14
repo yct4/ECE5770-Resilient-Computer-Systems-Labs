@@ -1,0 +1,39 @@
+ECE 5770 Lab 1 - Buffer Overflow Vulnerability
+
+Taken from: 
+
+Syracuse SEED Lab (http://www.cis.syr.edu/~wedu/seed/all_labs.html)
+
+This lab combines and modifies two labs found on the SEED website:
+
+"Buffer Overflow Lab"
+(http://www.cis.syr.edu/~wedu/seed/Labs_12.04/Vulnerability/Buffer_Overflow)
+
+"Return-to-libc Attack Lab"
+(http://www.cis.syr.edu/~wedu/seed/Labs_12.04/Vulnerability/Return_to_libc)
+
+
+Modified by: 
+
+Mohamed Ismail (mii5)
+February 2015
+
+
+Instructions:
+
+Please see lab handout for in-depth instructions. 
+You will need to complete the TODO sections of 
+"stack_shell.c" and "return_to_libc.c" to exploit
+the vulnerability in the program "vulnerable.c"
+
+The lab instructions describe which flags to use
+to compile each file and how to run the exploit.
+
+In order to effectively perform the lab, you will
+need to understand the stack layout and calling
+convention for x86.
+
+The "call_shellcode.c" program demonstrates that
+the provided shellcode array can start a shell
+when executed as x86 instructions.
+
